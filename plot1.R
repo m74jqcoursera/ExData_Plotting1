@@ -2,7 +2,7 @@ power <- read.csv("household_power_consumption.txt", sep=";", header=TRUE)
 df <- power[power$Date=="1/2/2007" | power$Date=="2/2/2007",]
 #df$Date <- as.character(df[,1])
 #df$Time <- as.character(df[,2])
-df$DateTime <- strptime(paste(df$Date, df$Time), "%m/%d/%Y %H:%M:%S")
+df$DateTime <- strptime(paste(df$Date, df$Time), "%d/%m/%Y %H:%M:%S")
 df[,3] <- as.numeric(as.character(df[,3]))
 df[,4] <- as.numeric(as.character(df[,4]))
 df[,5] <- as.numeric(as.character(df[,5]))
